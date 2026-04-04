@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'MOXA Bestine';
+  src: url('./assets/fonts/moxa_bestine/MOXA%20Bestine.woff2') format('woff2'),
+    url('./assets/fonts/moxa_bestine/MOXA%20Bestine.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Italianno';
+  src: url('./assets/fonts/Italianno-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Montserrat", sans-serif;
+  --font-logo: "MOXA Bestine", serif;
+  --font-quote: "Italianno", cursive;
+
+  --color-spa-bg: #F5F1E9;
+  --color-spa-secondary: #EAE2D6;
+  --color-spa-sand: #DCDDA0;
+  --color-spa-terracotta: #875B46;
+  --color-spa-olive: #5F5D46;
+  --color-spa-ink: #2D241E;
+
+  --radius-spa-lg: 24px;
+  --radius-spa-xl: 48px;
+}
+
+@layer base {
+  html {
+    background-color: #F5F1E9; /* Zapewnia, że przeźroczysty suwak pokaże beżowe tło SPA zamiast domyślnej bieli okna Windowsa */
+  }
+
+  body {
+    @apply bg-spa-bg text-spa-ink font-sans antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-serif;
+  }
+}
+
+.ritual-card-shadow {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+}
+
+.glass-effect {
+  background: rgba(245, 241, 233, 0.7);
+  backdrop-filter: blur(12px);
+}
+
+/* Custom scrollbar for a premium feel */
+::-webkit-scrollbar {
+  width: 8px;
+  background: transparent;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #EAE2D6;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #875B46;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scroll-indicator-mask {
+  mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+}
+
+@keyframes bounce-x {
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(10px);
+  }
+}
+
+.animate-bounce-x {
+  animation: bounce-x 1.5s infinite ease-in-out;
+}
+
+.scroll-hint-arrow {
+  @apply absolute bottom-4 left-1/2 -translate-x-1/2 text-spa-terracotta opacity-60 animate-bounce z-20 pointer-events-none;
+}
