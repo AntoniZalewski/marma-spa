@@ -7,6 +7,3 @@ coverage/
 .env*
 !.env.example
 
-# Wideo - za duze dla GitHub (limit 100MB)
-*.mp4
-*.mov
