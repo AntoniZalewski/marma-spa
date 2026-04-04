@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import { motion } from 'motion/react';
 import { Play, Pause } from 'lucide-react';
 import { ScrollReveal } from '../atoms/ScrollReveal';
-import heroVideoUrl from '../../assets/video/NewHeroVideo.mp4';
+const heroVideoUrl = '/video/NewHeroVideo.mp4';
 
 export const HeroSection: React.FC = () => {
   const [isPlaying, setIsPlaying] = useState(true);
